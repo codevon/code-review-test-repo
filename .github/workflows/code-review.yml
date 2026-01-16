@@ -1,28 +1,19 @@
-name: AI Code Review 
+name: AI Code Review
 
 on:
   pull_request:
     types: [opened, synchronize, reopened]
-    branches:
-      - master
-      - main
-
-permissions:
-  contents: read
-  pull-requests: write
 
 jobs:
-  ai-code-review:
+  review:
     runs-on: ubuntu-latest
-    name: AI Code Review
     steps:
-      - name: Checkout code
-        uses: actions/checkout@v4
+      - uses: actions/checkout@v4
         with:
           fetch-depth: 0
 
       - name: AI Code Review
-        uses: ./
+        uses: team247/auto-code-review@v0.0.1
         with:
           api-key: ${{ secrets.ANTHROPIC_API_KEY }}
           github-token: ${{ secrets.GITHUB_TOKEN }}
