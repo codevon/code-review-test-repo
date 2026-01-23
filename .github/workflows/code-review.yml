@@ -3,6 +3,11 @@ name: AI Code Review
 on:
   pull_request:
     types: [opened, synchronize, reopened]
+    branches:
+      - main
+      - master
+      - staging
+      - develop
 
 jobs:
   review:
@@ -13,7 +18,7 @@ jobs:
           fetch-depth: 0
 
       - name: AI Code Review
-        uses: team247/auto-code-review@v0.0.1
+        uses: team247/auto-code-review@main
         with:
           api-key: ${{ secrets.ANTHROPIC_API_KEY }}
           github-token: ${{ secrets.GITHUB_TOKEN }}

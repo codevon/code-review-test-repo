@@ -1,0 +1,18 @@
+{
+  "pull_request": {
+    "base": {
+      "sha": "853523d1e2e2cc1137ed07e442957a58468bccf7",
+      "ref": "master"
+    },
+    "head": {
+      "sha": "99383c7ac0636b1e4975bf599dcaafaa6f9748e0",
+      "ref": "review-test"
+    },
+    "number": 2
+  },
+  "repository": {
+    "full_name": "codevon/code-review-test-repo",
+    "name": "code-review-test-repo"
+  },
+  "action": "opened"
+}
